@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(90deg, lightblue, rgb(255, 255, 199));
+    background-size: 200% 100%;
+    animation: gradient 5s linear infinite;
+}
+a {
+    color: black;
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+/* Optional: Wenn Sie möchten, dass der Link beim Überfahren mit der Maus (Hover) eine andere Farbe hat */
+a:hover {
+    color: green;
+}
+
+/* Optional: Wenn Sie möchten, dass der Link eine andere Farbe hat, wenn er besucht wurde */
+a:visited {
+    color: black;
+}
+#createTweet{
+    border-radius:20px;
+}
+.navSpacer{
+    width:5vh;
+}
+.grayC{
+    color: darkgray;
+    font-weight: 600;
+    -webkit-text-stroke: 0%;
+}

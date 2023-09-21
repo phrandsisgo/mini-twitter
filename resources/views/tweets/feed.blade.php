@@ -1,24 +1,28 @@
+@extends('layouts.app')
+@section('header')
+
+@endsection
+@section('title', 'Feed')
+@section('content')
 <div>
-    <h1>hier werden meine Tweets angezeigt</h1>
+    <h5 class="grayC">FEED VON</h5>
+    <h3>Francisco Wohlgemuth</h3>
     <!--für die Entwicklung gibt es einen beispiel tweet-->
-    <div>
-        <h2>Beispiel Tweet</h2>
-        <p>Titel: Mein erster Tweet</p>
-        <p>Inhalt: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-        <form action="/tweets/1" method="POST">
-            <button type="submit">Tweet Anzeigen</button>
-        </form>
+    
         <!--die tweets jetzt anzeigen-->
         @foreach ($tweets as $tweet)
+        <a href="/tweets/{{$tweet->id}}"> 
         <div>
             <h2>{{$tweet->title}}</h2>
             <p>{{$tweet->text}}</p>
-            <form action="/tweets/{{$tweet->id}}" method="GET">
+      <!--      <form action="/tweets/{{$tweet->id}}" method="GET">
                 <button type="submit">Tweet Anzeigen</button>
-            </form>
+            </form>-->
             <p>{{$tweet->author}}</p>
         </div>
+        </a>
         <hr>
         @endforeach
 
 </div>
+@endsection

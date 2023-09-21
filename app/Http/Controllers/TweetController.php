@@ -8,7 +8,18 @@ use App\Models\Tweet;
 //die view findet man unter resources/views
 class TweetController extends Controller
 {
-    //$
+    public function newTweet(Request $request){
+        $request ->title;
+        $request -> text;
+        //macht das es gespeichert wird in die Datenbank:
+        Tweet::create([
+            'title' => $request->title,
+            'text' => $request->text,
+            'author' => 'ich'
+        ]);
+        return redirect('/feed');
+
+    }
     public function index(){
         return view('tweets.index');
     }
@@ -25,12 +36,18 @@ class TweetController extends Controller
         return view('tweets.feed', ['tweets' => $tweets]);
         //return view('tweets.feed');
     }
+    public function create_tweet(){
+        return view('tweets.create_tweet');
+    }
     public function tweets($id){
-        //hole mir die Daten aber spezifisch mit der id 1
 
         $tweets = Tweet::find($id);
 
        // echo "<script>alert('Tweet wurde erstellt')</script>";
         return view('tweets.show_tweet', ['tweets' => $tweets]);
+    }
+    public function delete_tweet($id){
+        Tweet::destroy($id);
+        return redirect('/feed');
     }
 } 
