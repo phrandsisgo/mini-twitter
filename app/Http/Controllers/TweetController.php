@@ -25,4 +25,12 @@ class TweetController extends Controller
         return view('tweets.feed', ['tweets' => $tweets]);
         //return view('tweets.feed');
     }
-}
+    public function tweets($id){
+        //hole mir die Daten aber spezifisch mit der id 1
+
+        $tweets = Tweet::find($id);
+
+       // echo "<script>alert('Tweet wurde erstellt')</script>";
+        return view('tweets.show_tweet', ['tweets' => $tweets]);
+    }
+} 

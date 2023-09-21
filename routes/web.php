@@ -14,11 +14,13 @@ use App\Http\Controllers\TweetController;
 |
 */
 //views werden gespeichert unter resources/views
+//der Controller ist unter app/Http/Controllers
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/tweets', [TweetController::class, 'index']);
+Route::get('/tweets/{id}', [TweetController::class, 'tweets']);
+
 Route::get('delete', function(){
     return view('tweets.delete');
 });

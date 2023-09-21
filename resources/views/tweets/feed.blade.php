@@ -13,11 +13,12 @@
         <div>
             <h2>{{$tweet->title}}</h2>
             <p>{{$tweet->text}}</p>
-            <form action="/tweets/{{$tweet->id}}" method="POST">
+            <form action="/tweets/{{$tweet->id}}" method="GET">
                 <button type="submit">Tweet Anzeigen</button>
             </form>
             <p>{{$tweet->author}}</p>
         </div>
         <hr>
         @endforeach
+
 </div>
