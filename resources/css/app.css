@@ -18,7 +18,7 @@ a:hover {
 
 /* Optional: Wenn Sie möchten, dass der Link eine andere Farbe hat, wenn er besucht wurde */
 a:visited {
-    color: black;
+    color: white;
 }
 #createTweet{
     border-radius:20px;
@@ -30,4 +30,37 @@ a:visited {
     color: darkgray;
     font-weight: 600;
     -webkit-text-stroke: 0%;
+}
+.Karte{
+    margin: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.trailing{
+    text-align: right;
+    color: darkgray;
+}
+.top-section{
+    padding: 20px;
+
+}
+.leading{
+    font-size: larger;
+    text-align: left;
+    font-weight: bold;
+}
+.greyColor{
+    color: darkgray;
+}
+.blacknWhiteButton{
+    visited: white;
+}
+.formClass{
+    padding:29px;
+    background-color: white;
+
+}
+.formStyle {
+    border-radius: 8px;
+    border: 1px solid black;
 }

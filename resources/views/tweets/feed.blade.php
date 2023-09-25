@@ -5,24 +5,29 @@
 @section('title', 'Feed')
 @section('content')
 <div>
+    <div class="Karte">
+
     <h5 class="grayC">FEED VON</h5>
     <h3>Francisco Wohlgemuth</h3>
-    <!--für die Entwicklung gibt es einen beispiel tweet-->
-    
-        <!--die tweets jetzt anzeigen-->
-        @foreach ($tweets as $tweet)
-        <a href="/tweets/{{$tweet->id}}"> 
-        <div>
-            <h2>{{$tweet->title}}</h2>
-            <p>{{$tweet->text}}</p>
-      <!--      <form action="/tweets/{{$tweet->id}}" method="GET">
-                <button type="submit">Tweet Anzeigen</button>
-            </form>-->
-            <p>{{$tweet->author}}</p>
-        </div>
-        </a>
-        <hr>
-        @endforeach
 
+    </div>
+    <!--für die Entwicklung gibt es einen beispiel tweet-->
+  
+    @foreach ($tweets->sortByDesc('updated_at') as $tweet)
+    <div class="Karte card">
+        <div class="row top-section">
+        <div class="leading col">{{$tweet->title}}</div>
+        <div class="trailing col">{{$tweet->updated_at}}</div>
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{$tweet->text}}</p>
+        <p class="greyColor">{{$tweet->author}}</p>
+        <a href="/tweets/{{$tweet->id}}" class="blacknWhiteButton btn btn-dark">Tweet ansehen</a>
+    </div>
+</div>
+        
+    @endforeach
+    
+    <hr>
 </div>
 @endsection

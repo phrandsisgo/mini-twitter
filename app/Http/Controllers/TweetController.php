@@ -11,6 +11,10 @@ class TweetController extends Controller
     public function newTweet(Request $request){
         $request ->title;
         $request -> text;
+        $validated = $request->validate([
+            'title' => 'required|unique:tweets|max:23|min:3',
+            'text' => 'required|unique:tweets|max:280|min:3',
+        ]);
         //macht das es gespeichert wird in die Datenbank:
         Tweet::create([
             'title' => $request->title,
