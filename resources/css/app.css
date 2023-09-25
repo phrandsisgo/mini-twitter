@@ -17,8 +17,9 @@ a:hover {
 }
 
 /* Optional: Wenn Sie möchten, dass der Link eine andere Farbe hat, wenn er besucht wurde */
-a:visited {
-    color: white;
+
+.logo:visited{
+    color:black;
 }
 #createTweet{
     border-radius:20px;
@@ -30,6 +31,9 @@ a:visited {
     color: darkgray;
     font-weight: 600;
     -webkit-text-stroke: 0%;
+}
+.tweetFeed{
+    box-shadow: 0 0 10px darkgray;
 }
 .Karte{
     margin: 20px;
@@ -63,4 +67,8 @@ a:visited {
 .formStyle {
     border-radius: 8px;
     border: 1px solid black;
+}
+.active{
+    background-color: lightblue;
+    box-shadow: 0 0 10px blue;
 }

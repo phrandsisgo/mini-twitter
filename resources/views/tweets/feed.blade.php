@@ -12,12 +12,17 @@
 
     </div>
     <!--für die Entwicklung gibt es einen beispiel tweet-->
-  
+ 
     @foreach ($tweets->sortByDesc('updated_at') as $tweet)
-    <div class="Karte card">
+    <?php
+    $tweetTime = $tweet->updated_at;
+    $timestamp = strtotime($tweetTime);
+    $newFormat = date('d.m.Y H:i', $timestamp);
+  ?>
+    <div class="Karte card tweetFeed">
         <div class="row top-section">
         <div class="leading col">{{$tweet->title}}</div>
-        <div class="trailing col">{{$tweet->updated_at}}</div>
+        <div class="trailing col">{{$newFormat}}</div>
     </div>
     <div class="card-body">
         <p class="card-text">{{$tweet->text}}</p>
