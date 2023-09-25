@@ -9,7 +9,7 @@
         <div class="formClass">
             <div class="mb3">
                 <label for="title" class="form-label">Titel</label>
-                <input type="text" name="title" id="title" class="form-control formStyle ">
+                <input type="text" name="title" id="title" class="form-control formStyle @error('title') is-invalid @enderror">
             </div>
             <div class="mb3">
                 <label for="text" class="form-label">Inhalt</label>
@@ -22,5 +22,4 @@
         </div>
     </form>
 </div>
-
 @endsection
