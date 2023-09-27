@@ -9,9 +9,10 @@
         <p>{{$tweets->text}}</p>
         <p class="greyColor"> Tweet erstellt von: {{$tweets->author}}</p>
     </div>
-   <!-- <a href ="/delete_tweet/{{$tweets->id}}">Tweet löschen</a>-->
+
+    <a href ="/tweets_bearbeiten/{{$tweets->id}}"><button class="btn btn-dark">Tweet bearbeiten</button></a>
     <form action="/delete_tweet/{{$tweets->id}}"onsubmit="event.preventDefault(); validateMyForm();" method="POST" id="delete-form">
-        @csrf
+        @csrf 
         <button type="submit" class="btn btn-danger" onclick="confirmDelete(event)">Tweet löschen</button>
     </form>
     <script>
@@ -23,5 +24,7 @@
                 alert('Tweet wurde nicht gelöscht');
             }
         }
+        
+    </script>
 </div>
 @endsection

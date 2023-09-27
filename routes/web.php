@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/tweets/{id}', [TweetController::class, 'tweets']);
+Route::get('/tweets_bearbeiten/{id}', [TweetController::class, 'tweets_bearbeiten']);
 
 // Route::get('delete', function(){
 //     return view('tweets.delete');

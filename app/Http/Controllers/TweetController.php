@@ -43,12 +43,17 @@ class TweetController extends Controller
     public function create_tweet(){
         return view('tweets.create_tweet');
     }
+
     public function tweets($id){
 
         $tweets = Tweet::find($id);
 
-       // echo "<script>alert('Tweet wurde erstellt')</script>";
         return view('tweets.show_tweet', ['tweets' => $tweets]);
+    }
+
+    public function tweets_bearbeiten($id){
+        $tweets = Tweet::find($id);
+        return view('tweets.tweets_bearbeiten', ['tweets' => $tweets]);
     }
     public function delete_tweet($id){
         Tweet::destroy($id);
