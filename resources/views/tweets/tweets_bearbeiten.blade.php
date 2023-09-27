@@ -2,9 +2,9 @@
 @section('title', 'Neuer Tweet erstellen')
 @section('content')
 <div class="Karte">
-    <h1>Tweet erstellen</h1>
-    <h4 class="greyColor">Was möchtest du mitteilen?</h4>
-    <form action="/newTweet" method="POST">
+    <h1>Tweet bearbeiten</h1>
+    <h4 class="greyColor">welche Änderungen müssen vorgenommen werden?</h4>
+    <form action="/tweetChanger" method="POST">
         @csrf
         <div class="formClass">
             <div class="mb3">

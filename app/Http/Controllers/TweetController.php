@@ -12,8 +12,8 @@ class TweetController extends Controller
         $request ->title;
         $request -> text;
         $validated = $request->validate([
-            'title' => 'required|unique:tweets|max:23|min:3',
-            'text' => 'required|unique:tweets|max:280|min:3',
+            'title' => 'required|max:23|min:3',
+            'text' => 'required|max:280|min:3',
         ]);
         //macht das es gespeichert wird in die Datenbank:
         Tweet::create([
@@ -22,8 +22,26 @@ class TweetController extends Controller
             'author' => 'ich'
         ]);
         return redirect('/feed');
-
     }
+    public function tweetChanger(Request $request, $id){
+
+
+        dd('fdjas');
+        $requist->title;
+        $requist->text;
+        $validated = $request->validate([
+            'title' => 'required|max:23|min:3',
+            'text' => 'required|max:280|min:3',
+        ]);
+        Tweet::where('id', $id)->update([
+            'title' => $request->title,
+            'text' => $request->text,
+            'updated_at' => now()
+        ]);
+        redirect('/feed');
+        
+    }
+
     public function index(){
         return view('tweets.index');
     }

@@ -22,18 +22,7 @@ Route::get('/', function () {
 Route::get('/tweets/{id}', [TweetController::class, 'tweets']);
 Route::get('/tweets_bearbeiten/{id}', [TweetController::class, 'tweets_bearbeiten']);
 
-// Route::get('delete', function(){
-//     return view('tweets.delete');
-// });
-/*
-Route::get('feed', function(){
-    return view('tweets.feed');
-});
-Route::get('create', function(){
-    return view('tweets.create_tweet');
-});
-*/
-//replavement:
+Route::post('tweetChanger/{id}', [TweetController::class, 'tweetChanger']);
 Route::post('delete_tweet/{id}', [TweetController::class, 'delete_tweet']);
 Route::get('feed', [TweetController::class, 'feed']);
 Route::get('create_tweet', [TweetController::class, 'create_tweet']);
