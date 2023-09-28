@@ -13,7 +13,7 @@
     @yield('header')
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-light">
+<nav class="navbar navbar-expand-sm bg-light ">
   <div class="container-fluid">
     <a class="navbar-brand" href="/feed">Mini Twitter</a>
     
@@ -22,10 +22,10 @@
        
        
       </ul>
-      <a href="/feed">  <button class="btn btn-outline-dark @if (Request::is('feed'))
-        active
+      <a href="/feed" class="@if (Request::is('feed'))
+      borderBottom
         
-      @endif" type="submit">Meine Tweets</button></a>
+      @endif">  Meine Tweets</a>
       <div class="navSpacer"></div>
       <a href="/create_tweet">
       <button id="createTweet" class="btn btn-primary">create a new Tweet</button></a>

@@ -18,11 +18,15 @@
     <script>
         function confirmDelete(event)
        {
-            if(confirm('Sind Sie sicher, dass Sie diesen Tweet löschen wollen?')){
-                this.submit();
-            }else{
-                alert('Tweet wurde nicht gelöscht');
-            }
+           const confirmation = confirm('Möchten Sie diesen Tweet wirklich löschen?');
+              if(!confirmation)
+              {
+                event.preventDefault();
+              }
+              else
+              {
+                document.getElementById('delete-form').submit();
+              }
         }
         
     </script>

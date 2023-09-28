@@ -70,5 +70,13 @@ a:hover {
 }
 .active{
     background-color: lightblue;
-    box-shadow: 0 0 10px blue;
+    /*box-shadow: 0 0 10px blue;
+    just a border on the bottom of this element*/
+}
+.borderBottom{
+    border-bottom: 5px solid black;
+    height: 100%;
+}
+.top100P{
+    height: 100%;
 }
