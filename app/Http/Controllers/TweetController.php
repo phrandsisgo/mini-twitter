@@ -26,9 +26,8 @@ class TweetController extends Controller
     public function tweetChanger(Request $request, $id){
 
 
-        dd('fdjas');
-        $requist->title;
-        $requist->text;
+        $request->title;
+        $request->text;
         $validated = $request->validate([
             'title' => 'required|max:23|min:3',
             'text' => 'required|max:280|min:3',
@@ -38,7 +37,7 @@ class TweetController extends Controller
             'text' => $request->text,
             'updated_at' => now()
         ]);
-        redirect('/feed');
+        return redirect('/feed');
         
     }
 

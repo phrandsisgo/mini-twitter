@@ -4,7 +4,8 @@
 <div class="Karte">
     <h1>Tweet bearbeiten</h1>
     <h4 class="greyColor">welche Änderungen müssen vorgenommen werden?</h4>
-    <form action="/tweetChanger" method="POST">
+    <form action="/tweetChanger/{{$tweets->id}}" method="POST">
+        
         @csrf
         <div class="formClass">
             <div class="mb3">
